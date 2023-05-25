@@ -10,8 +10,3 @@ jobs:
       - run: |
           python --version
           python -m pip install --upgrade pip setuptools
-          pip install \
-          --trusted-host dp-hackathon-2023.s3-website-us-east-1.amazonaws.com \
-          -i http://dp-hackathon-2023.s3-website-us-east-1.amazonaws.com/simple \
-          helloworld==1.0.0
-          python -c 'import helloworld; helloworld.hello()'
