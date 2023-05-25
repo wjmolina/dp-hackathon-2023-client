@@ -4,11 +4,13 @@ jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v2
-      - run: |
-        pip install --upgrade pip
-        pip install \
-        --trusted-host dp-hackathon-2023.s3-website-us-east-1.amazonaws.com \
-        -i http://dp-hackathon-2023.s3-website-us-east-1.amazonaws.com/simple \
-        helloworld
-        python -c 'import helloworld; helloworld.hello()'
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+      - run: python my_script.py
+          pip install --upgrade pip
+          pip install \
+          --trusted-host dp-hackathon-2023.s3-website-us-east-1.amazonaws.com \
+          -i http://dp-hackathon-2023.s3-website-us-east-1.amazonaws.com/simple \
+          helloworld
+          python -c 'import helloworld; helloworld.hello()'
